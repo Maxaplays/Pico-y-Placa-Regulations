@@ -6,7 +6,7 @@ inicioPM = time(16,0,0)
 finPM = time(19,30,0)
 
 def isValidPlaca(placa):
-    if(len(placa)==7 or len(placa)==8):
+    if(len(placa)==7 or len(placa)==8 and int(placa[-1])):
         return True
     return False
 
@@ -37,12 +37,18 @@ def picoyplaca(plate, date, time):
     dia = fechahora.weekday()
     time = fechahora.time()
 
-    if(dia == 6): # Sunday
+    if dia == 6: # Sunday
         return False
-    if(dia % 2 == 0 and canDriveEvenDay(plate,time)):
+    if dia % 2 == 0 and canDriveEvenDay(plate,time):
         return False
-    if(dia % 2 != 0 and canDriveOddDay(plate,time)):
+    if dia % 2 != 0 and canDriveOddDay(plate,time):
         return False
     return True
 
 
+if __name__ == '__main__':
+    plate = input("Enter your plate number: ")
+    date = input("Enter date on the specified format day/month/year (eg: 24/09/2021) :")
+    hour = input("Enter the hour on the specified format Hour/Minutes (eg: 17:00)  :")
+    canDrive = picoyplaca(plate,date,hour)
+    print("Se puede circular con normalidad" if canDrive else "No se puede circular")
