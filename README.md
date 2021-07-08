@@ -2,7 +2,7 @@
 
  Program designed to verify if you can drive in Quito depending on your license plate following the Pico y Placa regulations.
 
- ![](images\PicoyPlaca.jpg)
+ ![](https://github.com/Maxaplays/Pico-y-Placa-Regulations/blob/main/images/PicoyPlaca.jpg)
 
 ## 1. Install Dependencies 
 ___
@@ -16,4 +16,4 @@ ___
 `pytest -q tests.py`
 
 
-![](images\tests.jpg)
+![](https://github.com/Maxaplays/Pico-y-Placa-Regulations/blob/main/images/tests.jpg)
